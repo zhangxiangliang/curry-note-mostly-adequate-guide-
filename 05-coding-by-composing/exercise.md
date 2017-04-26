@@ -45,3 +45,24 @@ _underscore = replace(/\W+/g, '_');
 sanitizeNames = undefined;
 ```
 
+## Bonus 1:
+Refactor availablePrices with compose.
+```
+var availablePrices = function(cars) {
+  var available_cars = _.filter(_.prop('in_stock'), cars);
+  return available_cars.map(function(x){
+    return accounting.formatMoney(x.dollar_value)
+  }).join(', ');
+};
+```
+
+## Bonus 2:
+Refactor to pointfree. Hint: you can use _.flip().
+
+```
+var fastestCar = function(cars) {
+  var sorted = _.sortBy(function(car){ return car.horsepower }, cars);
+  var fastest = _.last(sorted);
+  return fastest.name + ' is the fastest';
+};
+```
