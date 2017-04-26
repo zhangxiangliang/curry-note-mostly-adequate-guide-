@@ -1,4 +1,4 @@
-# Chapter 5: Coding by Composing
+# Coding by Composing
 
 ## Category theory
 
@@ -20,4 +20,9 @@ compose(a, b, c) === compose(a, (b, c)) === compose((a, b), c)
 ### Identity
 ```
 compose(id, f) === compose(f, id) === f
+```
+
+### Composition Law
+```
+compose(map(f), map(g)) === map(compose(f, g))
 ```
