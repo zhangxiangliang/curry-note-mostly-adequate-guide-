@@ -57,4 +57,14 @@ Write a validation function that checks for a length > 3. It should return Right
 ex7 = x => undefined
 ```
 
+## Exercise 8
+Use ex7 above and Either as a functor to save the user if they are valid or return the error message string. Remember either's two arguments must return the same type.
 
+```
+save = x => new IO(() => {
+    console.log('SAVED USER!')
+    return x + '-saved';
+})
+
+var ex8 = undefined
+```

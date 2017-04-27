@@ -63,5 +63,5 @@ save = x => new IO(() => {
 
 // user => check => (save || error)
 
-_.compose(either(IO.of, save), ex7)
+ex8 = _.compose(either(IO.of, save), ex7)
 ```
