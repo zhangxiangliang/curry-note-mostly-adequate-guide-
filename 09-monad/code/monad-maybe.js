@@ -16,6 +16,10 @@ Maybe.prototype.join = function(f) {
     return this.isNothing() ? Maybe.of(null) : this.__value
 }
 
+Maybe.prototype.chain = function(f) {
+    return this.map(f).join()
+}
+
 maybe = curry(function(x, f, m) {
-  return m.isNothing() ? x : f(m.__value);
+  return m.isNothing() ? x : f(m.__value)
 });

@@ -11,3 +11,7 @@ IO.prototype.map = function(f) {
 IO.prototype.join = function() {
     return this.unsafePerformIO()
 }
+
+IO.prototype.chain = function(f) {
+    return this.map(f).join()
+}
